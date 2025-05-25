@@ -1,33 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buah</title>
-    <link rel="stylesheet" href="/frontend/style/dashboard.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar Pakan</title>
+  <link rel="stylesheet" href="/frontend/style/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/frontend/style/pakan.css" />
 </head>
 <body>
-      <div class="sidebar">
-    <div class="logo">
-      <img src="/assets/images/Gambar.png" alt="logo">
-      <span>DeFarm</span>
+  <div class="main-wrapper">
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="/assets/images/Gambar.png" alt="logo" />
+        <span>DeFarm</span>
+      </div>
+
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/frontend/component/dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="/frontend/pages/buah.html"><i class="fas fa-apple-alt"></i>Buah</a></li>
+        <li><a href="/frontend/pages/pakan.html"><i class="fas fa-drumstick-bite"></i>Pakan</a></li>
+        <li><a href="/frontend/pages/pupuk.html"><i class="fas fa-seedling"></i>Pupuk</a></li>
+        <li><a href="/frontend/pages/sayuran.html"><i class="fas fa-carrot"></i>Sayuran</a></li>
+      </ul>
+
+      <h5>Other</h5>
+      <ul>
+        <li><a href="/frontend/pages/pengaturan.html"><i class="fas fa-layer-group"></i>Pengaturan</a></li>
+        <li><a href="/frontend/pages/about.html"><i class="fas fa-clone"></i>Tentang</a></li>
+      </ul>
     </div>
 
-    <h5>Navigation</h5>
-    <ul>
-      <li><a href="/frontend/component/dashboard.html" class="{% if active_page == 'dashboard' %}active{% endif %}"><i class="fas fa-home"></i>Dashboard</a></li>
-      <li><a href="/frontend/pages/buah.html" class="{% if active_page == 'buah' %}active{% endif %}"><i class="fas fa-apple-alt"></i>Buah</a></li>
-      <li><a href="/frontend/pages/pakan.html" class="{% if active_page == 'pakan' %}active{% endif %}"><i class="fas fa-drumstick-bite"></i>Pakan</a></li>
-      <li><a href="/frontend/pages/pupuk.html" class="{% if active_page == 'pupuk' %}active{% endif %}"><i class="fas fa-seedling"></i>Pupuk</a></li>
-      <li><a href="/frontend/pages/sayuran.html" class="{% if active_page == 'sayuran' %}active{% endif %}"><i class="fas fa-carrot"></i>Sayuran</a></li>
-    </ul>
-    <h5>Other</h5>
-    <ul>
-      <li><a href="/frontend/pages/pengaturan.html" class="{% if active_page == 'pengaturan' %}active{% endif %}"><i class="fas fa-layer-group"></i>Pengaturan</a></li>
-      <li><a href="/frontend/pages/logout.html" class="{% if active_page == 'logout' %}active{% endif %}"><i class="fas fa-clone"></i>Keluar</a></li>
-    </ul>
-  </div>
+    <!-- Main Content -->
+    <div class="main-content">
+      
+      <!-- Topbar -->
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/hamburger-menu.svg" alt="Menu" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/search.svg" alt="Search" class="icon" />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/settings.svg" alt="Settings" class="icon" />
+          </div>
+          <div class="icon-wrapper notification">
+            <img src="/assets/icon/notification.svg" alt="Notifications" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/profile.svg" alt="Profile" class="icon" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Konten -->
+      <div class="content">
+        <div class="table-header">
+          <h2>Daftar Pakan Ternak</h2>
+          <button class="add-button" id="addPakanButton">
+            <i class="fas fa-plus"></i> Tambah Pakan
+          </button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Pakan</th>
+                <th>Jenis Ternak</th>
+                <th>Jumlah Stok</th>
+                <th>Satuan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Pakan Ayam 101</td>
+                <td>Unggas</td>
+                <td>150</td>
+                <td>Karung</td>
+                <td>
+                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Pakan Sapi Premium</td>
+                <td>Sapi</td>
+                <td>75</td>
+                <td>Karung</td>
+                <td>
+                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Pakan Ikan Super</td>
+                <td>Ikan</td>
+                <td>200</td>
+                <td>Kg</td>
+                <td>
+                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Modal Tambah Pakan -->
+      <div class="modal" id="addPakanModal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Tambah Pakan Baru</h2>
+          <form id="pakanForm">
+            <div class="form-group">
+              <label for="pakanName">Nama Pakan</label>
+              <input type="text" id="pakanName" name="pakanName" required />
+            </div>
+            <div class="form-group">
+              <label for="ternakType">Jenis Ternak</label>
+              <select id="ternakType" name="ternakType" required>
+                <option value="">Pilih Jenis Ternak</option>
+                <option value="Unggas">Unggas</option>
+                <option value="Sapi">Sapi</option>
+                <option value="Kambing">Kambing</option>
+                <option value="Ikan">Ikan</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pakanStock">Jumlah Stok</label>
+              <input type="number" id="pakanStock" name="pakanStock" required />
+            </div>
+            <div class="form-group">
+              <label for="pakanUnit">Satuan</label>
+              <select id="pakanUnit" name="pakanUnit" required>
+                <option value="">Pilih Satuan</option>
+                <option value="Karung">Karung</option>
+                <option value="Kg">Kg</option>
+                <option value="Gram">Gram</option>
+                <option value="Sak">Sak</option>
+              </select>
+            </div>
+            <button type="submit" class="submit-btn">Simpan</button>
+          </form>
+        </div>
+      </div>
+
+    </div> 
+
+  </div> 
+  <script src="/frontend/js/pakan.js"></script>
+  <script src="/frontend/js/sidebar.js"></script>
 </body>
 </html>

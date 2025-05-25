@@ -9,25 +9,57 @@
 
 </head>
 <body>
-      <div class="sidebar">
-    <div class="logo">
-      <img src="/assets/images/Gambar.png" alt="logo">
-      <span>DeFarm</span>
-    </div>
 
-    <h5>Navigation</h5>
-    <ul>
-      <li><a href="/frontend/component/dashboard.html" class="{% if active_page == 'dashboard' %}active{% endif %}"><i class="fas fa-home"></i>Dashboard</a></li>
-      <li><a href="/frontend/pages/buah.html" class="{% if active_page == 'buah' %}active{% endif %}"><i class="fas fa-apple-alt"></i>Buah</a></li>
-      <li><a href="/frontend/pages/pakan.html" class="{% if active_page == 'pakan' %}active{% endif %}"><i class="fas fa-drumstick-bite"></i>Pakan</a></li>
-      <li><a href="/frontend/pages/pupuk.html" class="{% if active_page == 'pupuk' %}active{% endif %}"><i class="fas fa-seedling"></i>Pupuk</a></li>
-      <li><a href="/frontend/pages/sayuran.html" class="{% if active_page == 'sayuran' %}active{% endif %}"><i class="fas fa-carrot"></i>Sayuran</a></li>
-    </ul>
-    <h5>Other</h5>
-    <ul>
-      <li><a href="/frontend/pages/pengaturan.html" class="{% if active_page == 'pengaturan' %}active{% endif %}"><i class="fas fa-layer-group"></i>Pengaturan</a></li>
-      <li><a href="/frontend/pages/logout.html" class="{% if active_page == 'logout' %}active{% endif %}"><i class="fas fa-clone"></i>Keluar</a></li>
-    </ul>
+  <div class="main-wrapper">
+       <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="/assets/images/Gambar.png" alt="logo">
+        <span>DeFarm</span>
+      </div>
+
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/frontend/component/dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="/frontend/pages/buah.html"><i class="fas fa-apple-alt"></i>Buah</a></li>
+        <li><a href="/frontend/pages/pakan.html"><i class="fas fa-drumstick-bite"></i>Pakan</a></li>
+        <li><a href="/frontend/pages/pupuk.html"><i class="fas fa-seedling"></i>Pupuk</a></li>
+        <li><a href="/frontend/pages/sayuran.html"><i class="fas fa-carrot"></i>Sayuran</a></li>
+      </ul>
+      <h5>Other</h5>
+      <ul>
+        <li><a href="/frontend/pages/pengaturan.html"><i class="fas fa-layer-group"></i>Pengaturan</a></li>
+        <li><a href="/frontend/pages/about.html"><i class="fas fa-clone"></i>Tentang</a></li>
+      </ul>
+    </div>
+ <!-- Main Content-->
+   <div class="main-content">
+      <!-- Topbar -->
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/hamburger-menu.svg" alt="Menu" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/search.svg" alt="Search" class="icon" />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/settings.svg" alt="Settings" class="icon" />
+          </div>
+          <div class="icon-wrapper notification">
+            <img src="/assets/icon/notification.svg" alt="Notifications" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/profile.svg" alt="Profile" class="icon" />
+          </div>
+        </div>
+      </div>
+   </div>
   </div>
+   
+   <script src="/frontend/js/sidebar.js"></script>
 </body>
 </html>
