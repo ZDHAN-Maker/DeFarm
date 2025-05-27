@@ -55,10 +55,118 @@
             <img src="/assets/icon/profile.svg" alt="Profile" class="icon" />
           </div>
         </div>
+      </div>`
+       <div class="content">
+        <div class="table-header">
+          <h2>Manajemen Pupuk</h2>
+          <button class="add-button" id="addPupukButton">
+            <i class="fas fa-plus"></i> Tambah Pupuk
+          </button>
+        </div>
+
+        <div class="table-container">
+            <table class="pupuk-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Pupuk</th>
+                <th>Jenis Pupuk</th>
+                <th>Jumlah</th>
+                <th>Satuan</th>
+                <th>Keterangan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Kompos Daun</td>
+                <td>Organik</td>
+                <td>50</td>
+                <td>Kg</td>
+                <td>Untuk tanaman buah</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Urea</td>
+                <td>Anorganik</td>
+                <td>30</td>
+                <td>Kg</td>
+                <td>Pupuk dasar</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Pupuk Kandang</td>
+                <td>Organik</td>
+                <td>80</td>
+                <td>Karung</td>
+                <td>Untuk sayuran</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-   </div>
-  </div>
-    
+
+      <!-- Modal Tambah Pupuk -->
+      <div class="modal" id="addPupukModal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Tambah Pupuk Baru</h2>
+          <form id="pupukForm">
+            <div class="form-group">
+              <label for="pupukName">Nama Pupuk</label>
+              <input type="text" id="pupukName" name="pupukName" required />
+            </div>
+            <div class="form-group">
+              <label for="jenisPupuk">Jenis Pupuk</label>
+              <select id="jenisPupuk" name="jenisPupuk" required>
+                <option value="">Pilih Jenis Pupuk</option>
+                <option value="Organik">Organik</option>
+                <option value="Anorganik">Anorganik</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="jumlahPupuk">Jumlah</label>
+              <input type="number" id="jumlahPupuk" name="jumlahPupuk" required />
+            </div>
+            <div class="form-group">
+              <label for="satuanPupuk">Satuan</label>
+              <select id="satuanPupuk" name="satuanPupuk" required>
+                <option value="">Pilih Satuan</option>
+                <option value="Kg">Kg</option>
+                <option value="Gram">Gram</option>
+                <option value="Karung">Karung</option>
+                <option value="Liter">Liter</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="keterangan">Keterangan</label>
+              <textarea id="keterangan" rows="3"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Simpan</button>
+          </form>
+        </div>
+      </div>
+
+    <script src="/frontend/js/pupuk.js"></script>
    <script src="/frontend/js/sidebar.js"></script>
 </body>
 </html>

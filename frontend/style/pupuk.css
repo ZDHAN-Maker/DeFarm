@@ -134,3 +134,197 @@ body {
 .sidebar li a i {
   width: 20px;
 }
+
+.content-wrapper {
+  padding: 25px;
+}
+
+.main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.content {
+  padding: 30px;
+}
+
+/* Table Customization */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.table-header h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.pupuk-table {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.pupuk-table thead {
+  background-color: #f8f9fa;
+}
+
+.pupuk-table th {
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 16px 24px;
+  border-bottom: 2px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.pupuk-table td {
+  padding: 14px 24px;
+  color: #4a5568;
+  vertical-align: middle;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.pupuk-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Action Buttons */
+.action-group {
+  display: flex;
+  gap: 8px;
+}
+      .action-btn {
+            padding: 8px 12px;
+            margin: 0 3px;
+        }
+.btn-edit {
+  background: #f6ad55;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-edit:hover {
+  background: #f39c12;
+}
+
+.btn-delete {
+  background: #fc8181;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  background: #f56565;
+}
+
+/* Modal Enhancements */
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 500px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+        .modal {
+            display: none;
+            position: fixed;
+            background: rgba(0,0,0,0.5);
+        }
+
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  color: #2d3748;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+.form-control:focus {
+  outline: none;
+  border-color: #63b3ed;
+  box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .sidebar {
+    left: -250px;
+  }
+  
+  .table-container {
+    border-radius: 0;
+  }
+  
+  .modal-content {
+    width: 90%;
+    margin: 1rem;
+  }
+}
+
+/* Keterangan Column Style */
+.keterangan-cell {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+        .submit-btn {
+            background: #27ae60;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+ .add-button {
+  font-family:"Montserrat", sans-serif ;
+            background: #439191;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
