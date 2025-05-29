@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const modal = document.getElementById('addPakanModal');
-  const addBtn = document.getElementById('addPakanButton');
+  const modal = document.getElementById('addSayurModal');
+  const addBtn = document.getElementById('addSayurButton');
   const closeBtn = document.querySelector('.close-button');
-  const form = document.getElementById('pakanForm');
+  const form = document.getElementById('sayurForm');
   const tableBody = document.querySelector('table tbody');
 
   let rowNumber = tableBody.rows.length;
@@ -24,14 +24,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Tambahkan pakan ke tabel
+  // Tambahkan sayur ke tabel
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const name = document.getElementById('pakanName').value;
-    const type = document.getElementById('ternakType').value;
-    const stock = document.getElementById('pakanStock').value;
-    const unit = document.getElementById('pakanUnit').value;
+    const name = document.getElementById('sayurName').value;
+    const category = document.getElementById('sayurType').value;
+    const stock = document.getElementById('sayurStock').value;
+    const unit = document.getElementById('sayurUnit').value;
 
     rowNumber += 1;
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     newRow.innerHTML = `
       <td>${rowNumber}</td>
       <td>${name}</td>
-      <td>${type}</td>
+      <td>${category}</td>
       <td>${stock}</td>
       <td>${unit}</td>
       <td>
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.reset();
     modal.style.display = 'none';
 
-    alert('Pakan baru berhasil ditambahkan!');
+    alert('Sayur baru berhasil ditambahkan!');
 
     addActionEvents(newRow);
   });
@@ -62,19 +62,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const deleteBtn = row.querySelector('.delete');
 
     deleteBtn.addEventListener('click', function () {
-      const pakanName = row.cells[1].textContent;
-      if (confirm(`Apakah Anda yakin ingin menghapus ${pakanName}?`)) {
+      const sayurName = row.cells[1].textContent;
+      if (confirm(`Apakah Anda yakin ingin menghapus ${sayurName}?`)) {
         row.remove();
-        alert(`${pakanName} telah dihapus`);
+        alert(`${sayurName} telah dihapus`);
         updateRowNumbers();
       }
     });
   }
 
-  // Tambahkan event ke baris awal (jika ada data dari HTML langsung)
+  // Tambahkan event ke baris awal
   document.querySelectorAll('table tbody tr').forEach(addActionEvents);
 
-  // Perbarui nomor urut setelah baris dihapus
+  // Perbarui nomor urut
   function updateRowNumbers() {
     rowNumber = 0;
     document.querySelectorAll('table tbody tr').forEach((row) => {

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buah</title>
+    <link rel="stylesheet" href="/frontend/style/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/frontend/style/buah.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+     <div class="sidebar">
+      <div class="logo">
+        <img src="/assets/images/Gambar.png" alt="logo">
+        <span>DeFarm</span>
+      </div>
+
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/frontend/component/dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="/frontend/pages/buah.html"><i class="fas fa-apple-alt"></i>Buah</a></li>
+        <li><a href="/frontend/pages/pakan.html"><i class="fas fa-drumstick-bite"></i>Pakan</a></li>
+        <li><a href="/frontend/pages/sayuran.html"><i class="fas fa-carrot"></i>Sayuran</a></li>
+        <li><a href="/frontend/pages/laporan.html"><i class="fas fa-chart-line"></i>Laporan Panen</a></li> 
+        <li><a href="/frontend/pages/hewan.html"><i class="fas fa-cow"></i>Hewan Ternak</a></li>       
+      </ul>
+      <h5>Other</h5>
+      <ul>
+        <li><a href="/frontend/pages/pengaturan.html"><i class="fas fa-layer-group"></i>Pengaturan</a></li>
+        <li><a href="/frontend/pages/pengguna.html"><i class="fas fa-user"></i>Pengguna</a></li>
+        <li><a href="/frontend/pages/berita.html"><i class="fas fa-newspaper"></i>Berita</a></li>
+        <li><a href="/frontend/pages/about.html"><i class="fas fa-clone"></i>Tentang</a></li>
+      </ul>
+        	</div>
+
+     <!-- Main Content-->
+     <div class="main-content">
+        <!-- Topbar -->
+        <div class="topbar">
+        <div class="topbar-left">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/hamburger-menu.svg" alt="Menu" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/search.svg" alt="Search" class="icon" />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/settings.svg" alt="Settings" class="icon" />
+          </div>
+          <div class="icon-wrapper notification">
+            <img src="/assets/icon/notification.svg" alt="Notifications" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/profile.svg" alt="Profile" class="icon" />
+          </div>
+        </div>
+     </div>
+
+     <!--Main Kontent-->
+        <div class="content">
+            <div class="table-header">
+             <h2>Laporan Panen</h2>
+             <button class="add-button" id="addHarvestButton">
+              <i class="fas fa-plus"></i> Tambah Laporan
+              </button>
+            </div>
+             <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Tanggal Panen</th>
+          <th>Nama Tanaman</th>
+          <th>Jenis</th>
+          <th>Jumlah Panen</th>
+          <th>Satuan</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2025-05-28</td>
+          <td>Tomat</td>
+          <td>Sayur</td>
+          <td>120</td>
+          <td>KG</td>
+          <td>
+            <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2025-05-29</td>
+          <td>Apel</td>
+          <td>Buah</td>
+          <td>85</td>
+          <td>KG</td>
+          <td>
+            <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+        </table>
+     </div>
+     <!-- Modal Tambah Laporan Panen -->
+<div class="modal" id="addPanenModal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Tambah Laporan Panen</h2>
+    <form id="panenForm">
+      <div class="form-group">
+        <label for="panenDate">Tanggal Panen</label>
+        <input type="date" id="panenDate" name="panenDate" required />
+      </div>
+      <div class="form-group">
+        <label for="plantName">Nama Tanaman</label>
+        <input type="text" id="plantName" name="plantName" required />
+      </div>
+      <div class="form-group">
+        <label for="plantType">Jenis</label>
+        <select id="plantType" name="plantType" required>
+          <option value="">Pilih Jenis</option>
+          <option value="Buah">Buah</option>
+          <option value="Sayur">Sayur</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="harvestAmount">Jumlah Panen</label>
+        <input type="number" id="harvestAmount" name="harvestAmount" required />
+      </div>
+      <div class="form-group">
+        <label for="harvestUnit">Satuan</label>
+        <select id="harvestUnit" name="harvestUnit" required>
+          <option value="">Pilih Satuan</option>
+          <option value="Kg">Kg</option>
+          <option value="Ikat">Ikat</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Simpan</button>
+    </form>
+  </div>
+</div>
+
+     </div>
+    </div>
+    <script src="/frontend/js/laporan.js"></script>
+    <script src="/frontend/js/sidebar.js"></script>
+</body>
+</html>
