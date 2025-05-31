@@ -85,6 +85,12 @@ body {
   z-index: 100;
 }
 
+.copyleft {
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.7;
+}
+
 .sidebar .logo {
   display: flex;
   align-items: center;

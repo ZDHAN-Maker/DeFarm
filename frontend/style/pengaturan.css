@@ -174,3 +174,10 @@ body {
 .submit-btn:hover {
   background-color: #2563eb;
 }
+
+
+.copyleft {
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.7;
+}
