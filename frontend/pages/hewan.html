@@ -60,6 +60,110 @@
           </div>
         </div>
       </div>
+      <!--Main Kontent-->
+        <div class="content">
+            <div class="table-header">
+             <h2>Daftar Hewan Ternak</h2>
+             <button class="add-button" id="addHarvestButton">
+              <i class="fas fa-plus"></i> Tambah Hewan
+              </button>
+            </div>
+             <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Jenis Hewan</th>
+          <th>Tanggal Lahir</th>
+          <th>Usia</th>
+          <th>Jenis Kelamin</th>
+          <th>Berat Badan</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+  <tr>
+    <td>1</td>
+    <td>Sapi</td>
+    <td>2022-03-15</td>
+    <td>3 tahun 2 bulan</td>
+    <td>Betina</td>
+    <td>450 Kg</td>
+    <td>Aktif</td>
+    <td>
+      <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+    </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Kambing</td>
+    <td>2023-01-10</td>
+    <td>1 tahun 4 bulan</td>
+    <td>Jantan</td>
+    <td>65 Kg</td>
+    <td>Sehat</td>
+    <td>
+      <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+    </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Ayam</td>
+    <td>2024-06-01</td>
+    <td>11 bulan</td>
+    <td>Betina</td>
+    <td>2.1 Kg</td>
+    <td>Sakit</td>
+    <td>
+      <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+    </td>
+  </tr>
+</tbody>
+        </table>
+     </div>
+     <!-- Modal Tambah Laporan Panen -->
+<div class="modal" id="addHewanModal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Tambah Data Hewan Ternak</h2>
+    <form id="hewanForm">
+      <div class="form-group">
+        <label for="jenisHewan">Jenis Hewan</label>
+        <input type="text" id="jenisHewan" name="jenisHewan" required />
+      </div>
+      <div class="form-group">
+        <label for="tanggalLahir">Tanggal Lahir</label>
+        <input type="date" id="tanggalLahir" name="tanggalLahir" required />
+      </div>
+      <div class="form-group">
+        <label for="jenisKelamin">Jenis Kelamin</label>
+        <select id="jenisKelamin" name="jenisKelamin" required>
+          <option value="">Pilih Jenis Kelamin</option>
+          <option value="Jantan">Jantan</option>
+          <option value="Betina">Betina</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="beratBadan">Berat Badan (Kg)</label>
+        <input type="number" id="beratBadan" name="beratBadan" step="0.1" required />
+      </div>
+      <div class="form-group">
+        <label for="statusHewan">Status</label>
+        <select id="statusHewan" name="statusHewan" required>
+          <option value="">Pilih Status</option>
+          <option value="Aktif">Aktif</option>
+          <option value="Sehat">Sehat</option>
+          <option value="Sakit">Sakit</option>
+          <option value="Mati">Mati</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Simpan</button>
+    </form>
+  </div>
+</div>
+
    </div>
 </div>
+<script src="/frontend/js/hewan.js"></script>
 </body>
+</html>
