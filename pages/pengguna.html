@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buah</title>
+    <link rel="stylesheet" href="/frontend/style/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />    <link rel="stylesheet" href="/style/index.css"> 
+</head>
+<body>
+  <div class="main-wrapper"> 
+       <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="/assets/images/Gambar.png" alt="logo">
+        <span>DeFarm</span>
+      </div>
+
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/component/index.html"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="/pages/buah.html"><i class="fas fa-apple-alt"></i>Buah</a></li>
+        <li><a href="/pages/pakan.html"><i class="fas fa-drumstick-bite"></i>Pakan</a></li>
+        <li><a href="/pages/sayuran.html"><i class="fas fa-carrot"></i>Sayuran</a></li>
+        <li><a href="/pages/laporan.html"><i class="fas fa-chart-line"></i>Laporan Panen</a></li> 
+        <li><a href="/pages/hewan.html"><i class="fas fa-cow"></i>Hewan Ternak</a></li>       
+      </ul>
+      <h5>Other</h5>
+      <ul>
+        <li><a href="/pages/pengaturan.html"><i class="fas fa-layer-group"></i>Pengaturan</a></li>
+        <li><a href="/pages/pengguna.html"><i class="fas fa-user"></i>Pengguna</a></li>
+        <li><a href="/pages/berita.html"><i class="fas fa-newspaper"></i>Berita</a></li>
+        <li><a href="/pages/about.html"><i class="fas fa-clone"></i>Tentang</a></li>
+      </ul>
+      <div class="copyleft">
+    <p>Copyleft &copy; 2025</p>
+  </div>
+    </div>
+ <!-- Main Content-->
+   <div class="main-content">
+      <!-- Topbar -->
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/hamburger-menu.svg" alt="Menu" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/search.svg" alt="Search" class="icon" />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/settings.svg" alt="Settings" class="icon" />
+          </div>
+          <div class="icon-wrapper notification">
+            <img src="/assets/icon/notification.svg" alt="Notifications" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/profile.svg" alt="Profile" class="icon" />
+          </div>
+        </div>
+      </div>
+      <!--Main Kontent-->
+      <div class="content">
+  <div class="table-header">
+    <h2>Daftar Pengguna</h2>
+    <button class="add-button" id="addUserButton">
+      <i class="fas fa-plus"></i> Tambah Pengguna
+    </button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama Lengkap</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Tanggal Bergabung</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Rina Sari</td>
+        <td>rina_sari</td>
+        <td>rina@example.com</td>
+        <td>Admin</td>
+        <td>Aktif</td>
+        <td>2023-01-15</td>
+        <td>
+          <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Andi Wijaya</td>
+        <td>andi_w</td>
+        <td>andi@example.com</td>
+        <td>Petani</td>
+        <td>Aktif</td>
+        <td>2023-05-10</td>
+        <td>
+          <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Sari Dewi</td>
+        <td>sari_dewi</td>
+        <td>sari@example.com</td>
+        <td>Manajer</td>
+        <td>Nonaktif</td>
+        <td>2022-11-20</td>
+        <td>
+        <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Modal Tambah Pengguna -->
+<div class="modal" id="addUserModal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Tambah Data Pengguna</h2>
+    <form id="userForm">
+      <div class="form-group">
+        <label for="namaLengkap">Nama Lengkap</label>
+        <input type="text" id="namaLengkap" name="namaLengkap" required />
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="role">Role</label>
+        <select id="role" name="role" required>
+          <option value="">Pilih Role</option>
+          <option value="Admin">Admin</option>
+          <option value="Petani">Petani</option>
+          <option value="Manajer">Manajer</option>
+          <option value="Staf Lapangan">Staf Lapangan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="statusUser">Status</label>
+        <select id="statusUser" name="statusUser" required>
+          <option value="">Pilih Status</option>
+          <option value="Aktif">Aktif</option>
+          <option value="Nonaktif">Nonaktif</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tanggalBergabung">Tanggal Bergabung</label>
+        <input type="date" id="tanggalBergabung" name="tanggalBergabung" required />
+      </div>
+      <button type="submit" class="submit-btn">Simpan</button>
+    </form>
+  </div>
+</div>
+
+   </div>
+  </div>
+  <script src="/js/pengguna.js"></script>
+   <script src="/js/sidebar.js"></script>
+</body>
+</html>

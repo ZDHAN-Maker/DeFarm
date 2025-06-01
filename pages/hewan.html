@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buah</title>
+    <link rel="stylesheet" href="/frontend/style/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/style/index.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="/assets/images/Gambar.png" alt="logo">
+        <span>DeFarm</span>
+      </div>
+
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/component/index.html"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="/pages/buah.html"><i class="fas fa-apple-alt"></i>Buah</a></li>
+        <li><a href="/pages/pakan.html"><i class="fas fa-drumstick-bite"></i>Pakan</a></li>
+        <li><a href="/pages/sayuran.html"><i class="fas fa-carrot"></i>Sayuran</a></li>
+        <li><a href="/pages/laporan.html"><i class="fas fa-chart-line"></i>Laporan Panen</a></li> 
+        <li><a href="/pages/hewan.html"><i class="fas fa-cow"></i>Hewan Ternak</a></li>       
+      </ul>
+      <h5>Other</h5>
+      <ul>
+        <li><a href="/pages/pengaturan.html"><i class="fas fa-layer-group"></i>Pengaturan</a></li>
+        <li><a href="/pages/pengguna.html"><i class="fas fa-user"></i>Pengguna</a></li>
+        <li><a href="/pages/berita.html"><i class="fas fa-newspaper"></i>Berita</a></li>
+        <li><a href="/pages/about.html"><i class="fas fa-clone"></i>Tentang</a></li>
+      </ul>
+      <div class="copyleft">
+    <p>Copyleft &copy; 2025</p>
+  </div>
+    </div>
+
+    <!-- Main Content-->
+   <div class="main-content">
+      <!-- Topbar -->
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/hamburger-menu.svg" alt="Menu" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/search.svg" alt="Search" class="icon" />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/settings.svg" alt="Settings" class="icon" />
+          </div>
+          <div class="icon-wrapper notification">
+            <img src="/assets/icon/notification.svg" alt="Notifications" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/profile.svg" alt="Profile" class="icon" />
+          </div>
+        </div>
+      </div>
+      <!--Main Kontent-->
+        <div class="content">
+            <div class="table-header">
+             <h2>Daftar Hewan Ternak</h2>
+             <button class="add-button" id="addHarvestButton">
+              <i class="fas fa-plus"></i> Tambah Hewan
+              </button>
+            </div>
+             <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Jenis Hewan</th>
+          <th>Tanggal Lahir</th>
+          <th>Usia</th>
+          <th>Jenis Kelamin</th>
+          <th>Berat Badan</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+  <tr>
+    <td>1</td>
+    <td>Sapi</td>
+    <td>2022-03-15</td>
+    <td>3 tahun 2 bulan</td>
+    <td>Betina</td>
+    <td>450 Kg</td>
+    <td>Aktif</td>
+    <td>
+      <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+    </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Kambing</td>
+    <td>2023-01-10</td>
+    <td>1 tahun 4 bulan</td>
+    <td>Jantan</td>
+    <td>65 Kg</td>
+    <td>Sehat</td>
+    <td>
+      <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+    </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Ayam</td>
+    <td>2024-06-01</td>
+    <td>11 bulan</td>
+    <td>Betina</td>
+    <td>2.1 Kg</td>
+    <td>Sakit</td>
+    <td>
+      <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+    </td>
+  </tr>
+</tbody>
+        </table>
+     </div>
+     <!-- Modal Tambah Laporan Panen -->
+<div class="modal" id="addHewanModal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Tambah Data Hewan Ternak</h2>
+    <form id="hewanForm">
+      <div class="form-group">
+        <label for="jenisHewan">Jenis Hewan</label>
+        <input type="text" id="jenisHewan" name="jenisHewan" required />
+      </div>
+      <div class="form-group">
+        <label for="tanggalLahir">Tanggal Lahir</label>
+        <input type="date" id="tanggalLahir" name="tanggalLahir" required />
+      </div>
+      <div class="form-group">
+        <label for="jenisKelamin">Jenis Kelamin</label>
+        <select id="jenisKelamin" name="jenisKelamin" required>
+          <option value="">Pilih Jenis Kelamin</option>
+          <option value="Jantan">Jantan</option>
+          <option value="Betina">Betina</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="beratBadan">Berat Badan (Kg)</label>
+        <input type="number" id="beratBadan" name="beratBadan" step="0.1" required />
+      </div>
+      <div class="form-group">
+        <label for="statusHewan">Status</label>
+        <select id="statusHewan" name="statusHewan" required>
+          <option value="">Pilih Status</option>
+          <option value="Aktif">Aktif</option>
+          <option value="Sehat">Sehat</option>
+          <option value="Sakit">Sakit</option>
+          <option value="Mati">Mati</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Simpan</button>
+    </form>
+  </div>
+</div>
+
+   </div>
+</div>
+<script src="/js/hewan.js"></script>
+</body>
+</html>

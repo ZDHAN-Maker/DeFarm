@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buah</title>
+    <link rel="stylesheet" href="/frontend/style/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/style/index.css">
+</head>
+<body>
+
+  <div class="main-wrapper">
+       <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="/assets/images/Gambar.png" alt="logo">
+        <span>DeFarm</span>
+      </div>
+
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/component/index.html"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="/pages/buah.html"><i class="fas fa-apple-alt"></i>Buah</a></li>
+        <li><a href="/pages/pakan.html"><i class="fas fa-drumstick-bite"></i>Pakan</a></li>
+        <li><a href="/pages/sayuran.html"><i class="fas fa-carrot"></i>Sayuran</a></li>
+        <li><a href="/pages/laporan.html"><i class="fas fa-chart-line"></i>Laporan Panen</a></li> 
+        <li><a href="/pages/hewan.html"><i class="fas fa-cow"></i>Hewan Ternak</a></li>       
+      </ul>
+      <h5>Other</h5>
+      <ul>
+        <li><a href="/pages/pengaturan.html"><i class="fas fa-layer-group"></i>Pengaturan</a></li>
+        <li><a href="/pages/pengguna.html"><i class="fas fa-user"></i>Pengguna</a></li>
+        <li><a href="/pages/berita.html"><i class="fas fa-newspaper"></i>Berita</a></li>
+        <li><a href="/pages/about.html"><i class="fas fa-clone"></i>Tentang</a></li>
+      </ul>
+      <div class="copyleft">
+    <p>Copyleft &copy; 2025</p>
+  </div>
+    </div>
+ <!-- Main Content-->
+   <div class="main-content">
+      <!-- Topbar -->
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/hamburger-menu.svg" alt="Menu" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/search.svg" alt="Search" class="icon" />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/settings.svg" alt="Settings" class="icon" />
+          </div>
+          <div class="icon-wrapper notification">
+            <img src="/assets/icon/notification.svg" alt="Notifications" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/profile.svg" alt="Profile" class="icon" />
+          </div>
+        </div>
+      </div>
+      <!-- Konten -->
+      <div class="content">
+        <div class="table-header">
+          <h2>Daftar Sayuran </h2>
+          <button class="add-button" id="addSayurButton">
+            <i class="fas fa-plus"></i> Tambah Sayuran
+          </button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Sayur</th>
+                <th>Jenis Sayur</th>
+                <th>Jumlah Stok</th>
+                <th>Satuan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Sayur bayam 101</td>
+                <td>Sayuran Daun</td>
+                <td>150</td>
+                <td>Ikat</td>
+                <td>
+                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Sayur Sawi Premium</td>
+                <td>Sayuran Daun</td>
+                <td>75</td>
+                <td>Ikat</td>
+                <td>
+                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Cabai Super</td>
+                <td>Buah</td>
+                <td>200</td>
+                <td>Kg</td>
+                <td>
+                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Modal Tambah Pakan -->
+      <div class="modal" id="addSayurModal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Tambah Sayuran Baru</h2>
+          <form id="sayurForm">
+            <div class="form-group">
+              <label for="sayurName">Nama Sayur</label>
+              <input type="text" id="sayurName" name="sayurName" required />
+            </div>
+            <div class="form-group">
+              <label for="sayurType">Jenis Sayur</label>
+              <select id="sayurType" name="sayurType" required>
+                <option value="">Pilih Jenis Sayuran</option>
+                <option value="Sayuran Daun">Sayuran Daun</option>
+                <option value="Sayuran Buah">Sayuran Buah</option>
+                <option value="Sayuran Akar">Sayuran Akar</option>
+                <option value="Sayuran Umbi">Sayuran Umbi</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sayurStock">Jumlah Stok</label>
+              <input type="number" id="sayurStock" name="sayurStock" required />
+            </div>
+            <div class="form-group">
+              <label for="sayurUnit">Satuan</label>
+              <select id="sayurUnit" name="sayurUnit" required>
+                <option value="">Pilih Satuan</option>
+                <option value="Ikat">Ikat</option>
+                <option value="Kg">Kg</option>
+              </select>
+            </div>
+            <button type="submit" class="submit-btn">Simpan</button>
+          </form>
+        </div>
+      </div>
+   </div>
+  </div>
+  <script src="/js/sayuran.js"></script>
+   <script src="/js/sidebar.js"></script>
+</body>
+</html>
