@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DeFarm</title>
+  <link rel="stylesheet" href="/style/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/style/dashboard.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="/assets/images/Gambar.png" alt="logo">
+        <span>DeFarm</span>
+      </div>
+
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/index.html"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="/pages/buah.html"><i class="fas fa-apple-alt"></i>Buah</a></li>
+        <li><a href="/pages/pakan.html"><i class="fas fa-drumstick-bite"></i>Pakan</a></li>
+        <li><a href="/pages/sayuran.html"><i class="fas fa-carrot"></i>Sayuran</a></li>
+        <li><a href="/pages/laporan.html"><i class="fas fa-chart-line"></i>Laporan Panen</a></li> 
+        <li><a href="/pages/hewan.html"><i class="fas fa-cow"></i>Hewan Ternak</a></li>       
+      </ul>
+      <h5>Other</h5>
+      <ul>
+        <li><a href="/pages/pengaturan.html"><i class="fas fa-layer-group"></i>Pengaturan</a></li>
+        <li><a href="/pages/pengguna.html"><i class="fas fa-user"></i>Pengguna</a></li>
+        <li><a href="/pages/berita.html"><i class="fas fa-newspaper"></i>Berita</a></li>
+        <li><a href="/pages/about.html"><i class="fas fa-clone"></i>Tentang</a></li>
+      </ul>
+      <div class="copyleft">
+    <p>Copyleft &copy; 2025</p>
+  </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Topbar -->
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/hamburger-menu.svg" alt="Menu" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/search.svg" alt="Search" class="icon" />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="icon-wrapper">
+            <img src="/assets/icon/settings.svg" alt="Settings" class="icon" />
+          </div>
+          <div class="icon-wrapper notification">
+            <img src="/assets/icon/notification.svg" alt="Notifications" class="icon" />
+          </div>
+          <div class="icon-wrapper">
+            <img src="/assets/icon/profile.svg" alt="Profile" class="icon" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Content -->
+      <div class="chart-container">
+        <h2 class="chart-title">Buah dan Sayuran - Januari 2025</h2>
+        <div class="chart-wrapper">
+          <canvas id="salesChart"></canvas>
+        </div>
+        
+        <div class="legends">
+          <div class="legend-item">
+            <div class="legend-color fruit"></div>
+            <span>Buah</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color vegetable"></div>
+            <span>Sayuran</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-container">
+        <div class="summary-card">
+          <h3 class="summary-title">Total Penjualan Buah</h3>
+          <div class="summary-value fruit-summary">Rp 12.450.000</div>
+          <div class="summary-change">+15% dari bulan sebelumnya</div>
+        </div>
+        <div class="summary-card">
+          <h3 class="summary-title">Total Penjualan Sayuran</h3>
+          <div class="summary-value vegetable-summary">Rp 9.780.000</div>
+          <div class="summary-change">+8% dari bulan sebelumnya</div>
+        </div>
+      </div>
+
+      <!-- Tambahan Table Container -->
+      <div class="data-table-container">
+<div class="add-row-container">
+    <!--Fungsi untuk menambahkan data baru secara manual -->
+  <h4>Tambah Data Baru</h4>
+  <form class="add-row-form" id="addRowForm">
+    <div class="form-group">
+      <label for="newType">Jenis</label>
+      <select id="newType" class="type-select" required>
+        <option value="">Pilih Jenis</option>
+        <option value="Buah">Buah</option>
+        <option value="Sayuran">Sayuran</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="newName">Nama</label>
+      <select id="newName" class="name-select" required disabled>
+        <option value="">Pilih Jenis dulu</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="newQuantity">Jumlah (kg)</label>
+      <input type="number" id="newQuantity" min="1" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="newPrice">Harga per kg (Rp)</label>
+      <input type="number" id="newPrice" min="1000" required>
+    </div>
+    
+    <button type="submit" class="add-btn">Tambah Data</button>
+  </form>
+</div>
+        <h3 class="data-table-title">Daftar Buah dan Sayuran</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Jenis</th>
+              <th>Nama</th>
+              <th>Jumlah Terjual (kg)</th>
+              <th>Harga per kg (Rp)</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data Buah -->
+            <tr class="fruit-row">
+              <td>Buah</td>
+              <td>
+                <span class="static-text">Pisang</span>
+                <select class="editable-input">
+                  <option value="Pisang">Pisang</option>
+                  <option value="Mangga">Mangga</option>
+                  <option value="Nanas">Nanas</option>
+                  <option value="Durian">Durian</option>
+                  <option value="Manggis">Manggis</option>
+                  <option value="Buah Naga">Buah Naga</option>
+                  <option value="Salak">Salak</option>
+                  <option value="Belimbing">Belimbing</option>
+                </select>
+              </td>
+              <td>
+                <span class="static-text">120</span>
+                <input type="number" class="editable-input" value="120">
+              </td>
+              <td>
+                <span class="static-text">15000</span>
+                <input type="number" class="editable-input" value="15000">
+              </td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="save-btn">Simpan</button>
+                <button class="cancel-btn">Batal</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr class="fruit-row">
+              <td>Buah</td>
+              <td>
+                <span class="static-text">Mangga</span>
+                <select class="editable-input">
+                  <option value="Mangga">Mangga</option>
+                  <option value="Pisang">Pisang</option>
+                  <option value="Nanas">Nanas</option>
+                  <option value="Durian">Durian</option>
+                  <option value="Manggis">Manggis</option>
+                  <option value="Buah Naga">Buah Naga</option>
+                  <option value="Salak">Salak</option>
+                  <option value="Belimbing">Belimbing</option>
+                </select>
+              </td>
+              <td>
+                <span class="static-text">85</span>
+                <input type="number" class="editable-input" value="85">
+              </td>
+              <td>
+                <span class="static-text">25000</span>
+                <input type="number" class="editable-input" value="25000">
+              </td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="save-btn">Simpan</button>
+                <button class="cancel-btn">Batal</button>
+                 <button class="cancel-btn">Delete</button>
+              </td>
+            </tr>
+            
+            <!-- Data Sayuran -->
+            <tr class="vegetable-row">
+              <td>Sayuran</td>
+              <td>
+                <span class="static-text">Kangkung</span>
+                <select class="editable-input">
+                  <option value="Kangkung">Kangkung</option>
+                  <option value="Bayam">Bayam</option>
+                  <option value="Sawi">Sawi</option>
+                  <option value="Daun Singkong">Daun Singkong</option>
+                  <option value="Kacang Panjang">Kacang Panjang</option>
+                  <option value="Mentimun">Mentimun</option>
+                  <option value="Selada">Selada</option>
+                  <option value="Kale">Kale</option>
+                </select>
+              </td>
+              <td>
+                <span class="static-text">75</span>
+                <input type="number" class="editable-input" value="75">
+              </td>
+              <td>
+                <span class="static-text">12000</span>
+                <input type="number" class="editable-input" value="12000">
+              </td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="save-btn">Simpan</button>
+                <button class="cancel-btn">Batal</button>
+                 <button class="cancel-btn">Delete</button>
+              </td>
+            </tr>
+            <tr class="vegetable-row">
+              <td>Sayuran</td>
+              <td>
+                <span class="static-text">Bayam</span>
+                <select class="editable-input">
+                  <option value="Bayam">Bayam</option>
+                  <option value="Kangkung">Kangkung</option>
+                  <option value="Sawi">Sawi</option>
+                  <option value="Daun Singkong">Daun Singkong</option>
+                  <option value="Kacang Panjang">Kacang Panjang</option>
+                  <option value="Mentimun">Mentimun</option>
+                  <option value="Selada">Selada</option>
+                  <option value="Kale">Kale</option>
+                </select>
+              </td>
+              <td>
+                <span class="static-text">60</span>
+                <input type="number" class="editable-input" value="60">
+              </td>
+              <td>
+                <span class="static-text">10000</span>
+                <input type="number" class="editable-input" value="10000">
+              </td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="save-btn">Simpan</button>
+                <button class="cancel-btn">Batal</button>
+                 <button class="cancel-btn">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/dashboard.js"></script>
+  <script src="/js/sidebar.js"></script>
+</body>
+</html>
